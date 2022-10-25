@@ -1,0 +1,19 @@
+{% extends 'dependencies.html' %}
+ 
+{% block content %}
+{% load static %}
+
+ 
+<div>
+    {% for a in quiz  %}
+    <div>
+        <a href="{% url 'changepage'  a.id %}">
+        {{a.name}},{{a.user}},{{a.id}}</a></div> 
+    
+       submit" class="btn btn-danger">Guncelle</button>
+            ]
+    {% endfor %}
+    
+    
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'dependencies.html' %}
+ 
+{% block content %}
+{% load static %}
+<div class="container ">
+<h1>Welcome to DataFlair Quiz</h1>
+ 
+<div align="right " id="displaytimer"><b>Timer: 0 seconds</b></div>
+ 
+ <form method='post' action=''>
+    <label for="fname"> Name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+    {% csrf_token %}
+
+
+    {% for r  in reversos %}
+ 
+
+
+    <div class="container ">
+        
+        <div class="card-columns" style="padding: 10px; margin: 20px;">
+            <div class="card" align="centre " style="width: 32rem; border:5px black solid">
+                <div class="card-body">
+                    <p class="card-text">Quiz: {{r.quiz}}</p>
+                    <p class="card-text">Percentage: {{r.percentage}}%</p>
+                    <p class="card-text">Time Taken: {{r.times}} seconds</p>
+                    <p class="card-text">Correct answers: {{r.correct}}</p>
+                    <p class="card-text">Incorrect answers: {{r.wrong}}</p>
+                    <p class="card-text">Total questions: {{r.total}}</p>
+                    <h5> The result of {{r.name}}</h5>
+                </div>
+            </div>
+        </div>
+     
+    </div>
+    {% endfor %}
+
+ 
+ 
+</div>
+{% endblock %}

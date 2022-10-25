@@ -1,0 +1,16 @@
+{% extends 'dependencies.html' %}
+ 
+{% block content %}
+{% load static %}
+
+ 
+<div>
+    {% for a in quiz  %}
+    <div>
+        <a href="{% url 'quiz_detail'  a.id %}">
+        {{a.name}},{{a.user}}</a></div> 
+    
+    
+    {% endfor %}
+</div>
+{% endblock %}
